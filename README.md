@@ -5,11 +5,27 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
 Try running some of the following tasks:
 
 ```shell
-npx hardhat accounts
+Prerequisites
+Node =>12.0
+
+Start Out
+cd nft-minting-portal
+npm init -y
+npm install --save-dev hardhat
+npx hardhat
+
+Required Dependencies
+npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
+npm install @openzeppelin/contracts
+
+Edit .env according to hardhat.config.js
+
+Compiling Smart Contracts
 npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+
+Testing before deploying
+npx hardhat run scripts/run.js
+
+Deploy to rinkeby
+npx hardhat run scripts/deploy.js --network rinkeby  // configure other networks in hardhat.config.js
 ```
